@@ -6,15 +6,15 @@ Welcome to the repository where you'll find solutions to various programming pro
 
 ### C++
 Click the link below to access C++ problems:
-- [problems-C++.cpp](./cpp-solutions//problems.cpp)
+- [Problem Solving Solutions => C++](./cpp-solutions//problems.cpp)
 
 ### Go
 Click the link below to access Go problems:
-- [problems-GO.go](./go-solutions//problems.go)
+- [Problem Solving Solutions => GO](./go-solutions//problems.go)
 
 ### JavaScript
 Click the link below to access JavaScript problems:
-- [problems-Js.js](./js-solutions//problems.js)
+- [Problem Solving Solutions => JavaScript](./js-solutions//problems.js)
 
 ## Problems Solved
 
