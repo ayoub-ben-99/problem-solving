@@ -5,16 +5,16 @@ Welcome to the repository where you'll find solutions to various programming pro
 ## Languages Used
 
 ### C++
-
-Solutions to problems related to prime numbers, sorting, mathematical operations, and complex algorithms.
+Click the link below to access C++ problems:
+- [problems-C++.cpp](./cpp-solutions//problems.cpp)
 
 ### Go
-
-Solutions for problems involving parallel processing, input/output operations, concurrency, and multithreading.
+Click the link below to access Go problems:
+- [problems-GO.go](./go-solutions//problems.go)
 
 ### JavaScript
-
-Solutions for problems related to data validation, string manipulation, mathematical operations, and web development tasks (including backend programming with Node.js).
+Click the link below to access JavaScript problems:
+- [problems-Js.js](./js-solutions//problems.js)
 
 ## Problems Solved
 
@@ -132,4 +132,4 @@ Feel free to contribute by adding more solutions or improving existing ones. You
 3. Solve the problem or enhance existing solutions.
 4. Submit your changes via pull requests.
 
-**Happy Coding!** 🎉 
+**Happy Coding!** 🎉
