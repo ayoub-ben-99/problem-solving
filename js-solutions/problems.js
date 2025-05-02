@@ -1,8 +1,38 @@
 // ======> 1. Find the largest of three numbers.
+console.log(`1) ${Math.max(1, 2, 3, 4)}`); // 4
+
 // ======> 2. Check if a number is prime.
+function isPrime(n) {
+    if (n <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }
+  console.log(`2) ${isPrime(2)}`); // true
+  
+  
 // ======> 3. Calculate the factorial of a number.
+function factorial(n) {
+    if (n < 0) return "false";
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+  }
+  
+  console.log(`3) ${factorial(5)}`); // 120
+  
+
 // ======> 4. Check if a number is even or odd.
+
+function evenOrOdd(n) {
+    return `${n} is ${n % 2 === 0 ? 'even' : 'odd'}`;
+}
+
+console.log(`4) ${evenOrOdd(5)}`);
+
+
 // ======> 5. Reverse a string.
+
 // ======> 6. Print Fibonacci series up to n terms.
 // ======> 7. Check if a number is a palindrome.
 // ======> 8. Count the number of vowels in a string.
