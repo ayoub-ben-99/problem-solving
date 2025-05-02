@@ -1,43 +1,100 @@
 // ======> 1. Find the largest of three numbers.
-console.log(`1) ${Math.max(1, 2, 3, 4)}`); // 4
+console.log('1)' , Math.max(1, 2, 3, 4)); // 4
 
 // ======> 2. Check if a number is prime.
 function isPrime(n) {
-    if (n <= 1) return false;
-    for (let i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) return false;
-    }
-    return true;
+  if (n <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
   }
-  console.log(`2) ${isPrime(2)}`); // true
-  
-  
+  return true;
+}
+console.log(`2) ${isPrime(2)}`); // true
+
 // ======> 3. Calculate the factorial of a number.
 function factorial(n) {
-    if (n < 0) return "false";
-    if (n === 0 || n === 1) return 1;
-    return n * factorial(n - 1);
-  }
-  
-  console.log(`3) ${factorial(5)}`); // 120
-  
+  if (n < 0) return "false";
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
+}
+
+console.log('3)' , factorial(5)); // 120
 
 // ======> 4. Check if a number is even or odd.
 
 function evenOrOdd(n) {
-    return `${n} is ${n % 2 === 0 ? 'even' : 'odd'}`;
+  return `${n} is ${n % 2 === 0 ? "even" : "odd"}`;
 }
 
-console.log(`4) ${evenOrOdd(5)}`);
-
+console.log('4)' , evenOrOdd(5));
 
 // ======> 5. Reverse a string.
 
+function reverseStr(str) {
+  return str.split("").reverse().join("");
+}
+console.log(`5) ${reverseStr("ayoub-ben-99")}`);
+
 // ======> 6. Print Fibonacci series up to n terms.
+
+function generateFibonacci(n) {
+  if (n <= 0) return ["nothing"];
+
+  const sequence = [0];
+  if (n === 1) return sequence;
+
+  sequence.push(1);
+
+  for (let i = 2; i < n; i++) {
+    sequence.push(sequence[i - 1] + sequence[i - 2]);
+  }
+
+  return parseInt(sequence.join(""));
+}
+console.log('6)', generateFibonacci(5));
+
 // ======> 7. Check if a number is a palindrome.
+
+function palindrome(num) {
+  let numpalindrome = num.toString().split("").reverse().join("");
+  return numpalindrome === num.toString() ? "yes palindrome" : "no palindrome";
+}
+console.log(`7) ${palindrome(121)}`);
+
 // ======> 8. Count the number of vowels in a string.
+
+function vowelsStr(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  return str
+    .toLowerCase()
+    .split("")
+    .filter((x) => vowels.includes(x)).length;
+}
+
+console.log("8)" , vowelsStr("ayoub")); // 3
+
 // ======> 9. Find the second largest number in an array.
+
+function secondLargest(arr) {
+  const max = Math.max(...arr);
+  const filtered = arr.filter((num) => num !== max);
+  return Math.max(...filtered);
+}
+
+console.log("9)" , secondLargest([1, 4, 6, 8, 10, 20]));
+
 // ======> 10. Find the factorial of a number using recursion.
+
+function recursionFactorial(num) {
+    if (num === 0 || num === 1) {
+      return 1;
+    }
+    return num * recursionFactorial(num - 1); 
+  }
+  
+  console.log("10)" , recursionFactorial(4));
+  
+
 // ======> 11. Check if a string is an anagram of another.
 // ======> 12. Find the prime factors of a number.
 // ======> 13. Merge two sorted arrays into one sorted array.
