@@ -1,5 +1,5 @@
 // ======> 1. Find the largest of three numbers.
-console.log('1)' , Math.max(1, 2, 3, 4)); // 4
+console.log("1)", Math.max(1, 2, 3, 4)); // 4
 
 // ======> 2. Check if a number is prime.
 function isPrime(n) {
@@ -18,7 +18,7 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
-console.log('3)' , factorial(5)); // 120
+console.log("3)", factorial(5)); // 120
 
 // ======> 4. Check if a number is even or odd.
 
@@ -26,7 +26,7 @@ function evenOrOdd(n) {
   return `${n} is ${n % 2 === 0 ? "even" : "odd"}`;
 }
 
-console.log('4)' , evenOrOdd(5));
+console.log("4)", evenOrOdd(5));
 
 // ======> 5. Reverse a string.
 
@@ -51,7 +51,7 @@ function generateFibonacci(n) {
 
   return parseInt(sequence.join(""));
 }
-console.log('6)', generateFibonacci(5));
+console.log("6)", generateFibonacci(5));
 
 // ======> 7. Check if a number is a palindrome.
 
@@ -71,7 +71,7 @@ function vowelsStr(str) {
     .filter((x) => vowels.includes(x)).length;
 }
 
-console.log("8)" , vowelsStr("ayoub")); // 3
+console.log("8)", vowelsStr("ayoub")); // 3
 
 // ======> 9. Find the second largest number in an array.
 
@@ -81,30 +81,142 @@ function secondLargest(arr) {
   return Math.max(...filtered);
 }
 
-console.log("9)" , secondLargest([1, 4, 6, 8, 10, 20]));
+console.log("9)", secondLargest([1, 4, 6, 8, 10, 20]));
 
 // ======> 10. Find the factorial of a number using recursion.
 
 function recursionFactorial(num) {
-    if (num === 0 || num === 1) {
-      return 1;
-    }
-    return num * recursionFactorial(num - 1); 
+  if (num === 0 || num === 1) {
+    return 1;
   }
-  
-  console.log("10)" , recursionFactorial(4));
-  
+  return num * recursionFactorial(num - 1);
+}
+
+console.log("10)", recursionFactorial(4));
 
 // ======> 11. Check if a string is an anagram of another.
+
+function anagram(str) {
+  let strAnagram = str.split("").reverse().join("");
+  return strAnagram === str
+    ? `anagram : ${strAnagram} = ${str}`
+    : `not anagram : ${strAnagram} != ${str}`;
+}
+console.log("11)", anagram("ayoub"));
+
 // ======> 12. Find the prime factors of a number.
+
+function getPrimeFactors(num) {
+  const factors = [];
+  while (num % 2 === 0) {
+    factors.push(2);
+    num /= 2;
+  }
+  let divisor = 3;
+  while (divisor * divisor <= num) {
+    while (num % divisor === 0) {
+      factors.push(divisor);
+      num /= divisor;
+    }
+    divisor += 2;
+  }
+  if (num > 2) {
+    factors.push(num);
+  }
+
+  return factors;
+}
+console.log(`12 Prime factors of ${84}: ${getPrimeFactors(84).join(" × ")}`);
+
 // ======> 13. Merge two sorted arrays into one sorted array.
+
+function mergeArrays(arrOne, arrTwo) {
+  return arrOne.concat(arrTwo).sort();
+}
+console.log("13)", mergeArrays(["c", "b", 2], ["d", 3, "a", 1]));
+
 // ======> 14. Find the most frequent element in an array.
+
+function findMostFrequent(arr) {
+  const freq = {};
+  let max = 0;
+  let most = null;
+
+  for (let item of arr) {
+    freq[item] = (freq[item] || 0) + 1;
+    if (freq[item] > max) {
+      max = freq[item];
+      most = item;
+    }
+  }
+  return most;
+}
+console.log("14)", findMostFrequent([4, 2, 4, 1, 4, 3, 2, 2]));
+
 // ======> 15. Implement binary search.
+
+function binarySearch(arr, target) {
+  let start = 0;
+  let end = arr.length - 1;
+
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    }
+    if (arr[mid] < target) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+  return -1;
+}
+
+console.log(
+  "15)",
+  `index 10 for arr is :`,
+  binarySearch([2, 4, 6, 8, 10, 12, 14], 10)
+);
+
 // ======> 16. Find the sum of digits of a number.
+function digitsNum(num) {
+  return num
+    .toString()
+    .split("")
+    .reduce((acc, val) => +acc + +val);
+}
+console.log("16)", "1 + 2 + 3 =", digitsNum(123));
+
 // ======> 17. Implement bubble sort.
+
+function bubbleSort(arr) {
+  return arr.sort((a, b) => a - b);
+}
+console.log("17)", bubbleSort([1, 3, 4, 7, 67, 4, 5, 8, 6, 44, 2]));
+
 // ======> 18. Find the GCD of two numbers.
+function gcd(a, b) {
+  return b === 0 ? a : gcd(b, a % b);
+}
+
+console.log("18)", gcd(18, 12));
+
 // ======> 19. Find the LCM of two numbers.
+function lcm(a, b) {
+  return (a * b) / gcd(a, b);
+}
+
+console.log("19)", lcm(4, 6));
 // ======> 20. Convert a decimal number to binary.
+
+function decimalNumberToBinary(num) {
+  let newNum = num.toString(2);
+  return parseInt(newNum);
+}
+console.log("20)", decimalNumberToBinary(222));
+
 // ======> 21. Find the common elements in two arrays.
 // ======> 22. Check if two strings are permutations of each other.
 // ======> 23. Implement quicksort.
